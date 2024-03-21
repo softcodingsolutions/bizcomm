@@ -40,6 +40,11 @@ group :development, :test do
   gem "debug", platforms: %i[ mri windows ]
 end
 
+gem 'devise-api', github: 'nejdetkadir/devise-api', branch: 'main'
+gem 'devise'
+gem 'pundit'
+gem 'pry-rails'
+
 group :development do
   # Speed up commands on slow machines / big apps [https://github.com/rails/spring]
   # gem "spring"
