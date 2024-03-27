@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :business_categories
   namespace :api do
     devise_for :users
     resources :packages
