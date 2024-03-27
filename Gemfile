@@ -44,6 +44,7 @@ gem 'devise-api', github: 'nejdetkadir/devise-api', branch: 'main'
 gem 'devise'
 gem 'pundit'
 gem 'pry-rails'
+gem 'awesome_print'
 
 group :development do
   # Speed up commands on slow machines / big apps [https://github.com/rails/spring]
