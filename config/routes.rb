@@ -2,6 +2,10 @@ Rails.application.routes.draw do
   resources :business_categories
   namespace :api do
     devise_for :users
+
+    resources :users do
+      get 'pending_requests' , to: 'users#pending_requests', on: :collection
+    end
     resources :packages
     resources :business_categories
   end

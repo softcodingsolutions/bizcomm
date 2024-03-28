@@ -3,7 +3,8 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable, :api
-  has_many :packages
+
+  belongs_to :package, optional: true
 
   enum :role, {
     "admin": 0,

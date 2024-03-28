@@ -21,19 +21,19 @@ class Api::BusinessCategoriesController < ApplicationController
     if @business_category
       authorize @business_category
       if @business_category.update(business_category_params)
-        render json: { business_category: @business_category, message: 'business_category has been created successfully' }, status: :ok
+        render json: { business_category: @business_category, message: 'Business Catgeory has been deleted successfully' }, status: :ok
       else
         render json: { error: @business_category.errors.full_messages }, status: :unprocessable_entity
       end
     else
-      render json: {error: "Business Category "}
+      render json: {error: "Business Category not found"}, status: :not_found
     end
   end
 
   def destroy
     authorize @business_category
     if @business_category.destroy
-      render json: { business_category: @business_category, message: 'business_category has been updated successfully' }, status: :ok
+      render json: { business_category: @business_category, message: 'Business Caetgory has been deleted successfully' }, status: :ok
     end
   end
 
