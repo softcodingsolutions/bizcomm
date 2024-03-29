@@ -5,6 +5,11 @@ Rails.application.routes.draw do
 
     resources :users do
       get 'pending_requests' , to: 'users#pending_requests', on: :collection
+      get 'registered_users', to: 'users#registered_users', on: :collection
+      member do
+        post 'approve_request', to: 'users#approve_request'
+        post 'reject_request', to: 'users#reject_request'
+      end
     end
     resources :packages
     resources :business_categories
