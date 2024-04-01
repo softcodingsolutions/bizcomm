@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   resources :business_categories
   namespace :api do
-    devise_for :users
+    devise_for :users,  controllers: { tokens: 'api/tokens' }
 
     resources :users do
       get 'pending_requests' , to: 'users#pending_requests', on: :collection
